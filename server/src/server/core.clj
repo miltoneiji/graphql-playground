@@ -1,6 +1,9 @@
-(ns server.core)
+(ns server.core
+  (:require [ring.adapter.jetty :refer [run-jetty]]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defn handler [request]
+  {:status 200
+   :body "hello, world!"})
+
+(defn main []
+  (run-jetty handler {:port 3000}))
