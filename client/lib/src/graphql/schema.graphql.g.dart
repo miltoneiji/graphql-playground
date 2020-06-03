@@ -8,17 +8,17 @@ part of 'schema.graphql.dart';
 
 Simple$Query$Pokemon _$Simple$Query$PokemonFromJson(Map<String, dynamic> json) {
   return Simple$Query$Pokemon()
+    ..id = json['id'] as String
     ..name = json['name'] as String
-    ..number = json['number'] as String
-    ..maxHP = json['maxHP'] as int;
+    ..number = json['number'] as int;
 }
 
 Map<String, dynamic> _$Simple$Query$PokemonToJson(
         Simple$Query$Pokemon instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'name': instance.name,
       'number': instance.number,
-      'maxHP': instance.maxHP,
     };
 
 Simple$Query _$Simple$QueryFromJson(Map<String, dynamic> json) {

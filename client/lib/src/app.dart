@@ -24,12 +24,12 @@ class _AppState extends State<App> {
     final pokemon = await _queryPokemon();
     setState(() {
       response =
-          'name: ${pokemon.name}\nmaxHP: ${pokemon.number}\nnumber: ${pokemon.number}';
+          'id: ${pokemon.id}\nname: ${pokemon.name}\nnumber: ${pokemon.number}';
     });
   }
 
   Future<Simple$Query$Pokemon> _queryPokemon() async {
-    final client = ArtemisClient('https://graphql-pokemon.now.sh/graphql');
+    final client = ArtemisClient('http://localhost:3000');
     final query = SimpleQuery();
     final response = await client.execute(query);
     return response.data.pokemon;

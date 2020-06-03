@@ -1,7 +1,7 @@
 query simple {
-  pokemon(name: "Charmander") {
+  pokemon() {
+    id
     name
     number
-    maxHP
   }
 }

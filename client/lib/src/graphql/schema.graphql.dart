@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:meta/meta.dart';
 import 'package:artemis/artemis.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:equatable/equatable.dart';
@@ -13,14 +14,14 @@ class Simple$Query$Pokemon with EquatableMixin {
   factory Simple$Query$Pokemon.fromJson(Map<String, dynamic> json) =>
       _$Simple$Query$PokemonFromJson(json);
 
+  String id;
+
   String name;
 
-  String number;
-
-  int maxHP;
+  int number;
 
   @override
-  List<Object> get props => [name, number, maxHP];
+  List<Object> get props => [id, name, number];
   Map<String, dynamic> toJson() => _$Simple$Query$PokemonToJson(this);
 }
 
@@ -52,13 +53,15 @@ class SimpleQuery extends GraphQLQuery<Simple$Query, JsonSerializable> {
           FieldNode(
               name: NameNode(value: 'pokemon'),
               alias: null,
-              arguments: [
-                ArgumentNode(
-                    name: NameNode(value: 'name'),
-                    value: StringValueNode(value: 'Charmander', isBlock: false))
-              ],
+              arguments: [],
               directives: [],
               selectionSet: SelectionSetNode(selections: [
+                FieldNode(
+                    name: NameNode(value: 'id'),
+                    alias: null,
+                    arguments: [],
+                    directives: [],
+                    selectionSet: null),
                 FieldNode(
                     name: NameNode(value: 'name'),
                     alias: null,
@@ -67,12 +70,6 @@ class SimpleQuery extends GraphQLQuery<Simple$Query, JsonSerializable> {
                     selectionSet: null),
                 FieldNode(
                     name: NameNode(value: 'number'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'maxHP'),
                     alias: null,
                     arguments: [],
                     directives: [],

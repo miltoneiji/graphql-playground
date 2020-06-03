@@ -5,6 +5,7 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [ring/ring-core "1.8.1"]
-                 [ring/ring-jetty-adapter "1.8.1"]]
+                 [ring/ring-jetty-adapter "1.8.1"]
+                 [com.walmartlabs/lacinia "0.37.0-alpha-1"]]
   :repl-options {:init-ns server.core}
   :main server.core/main)
