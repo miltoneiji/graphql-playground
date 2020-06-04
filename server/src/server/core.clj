@@ -17,8 +17,8 @@
        {:Pokemon {:fields {:id     {:type '(non-null String)}
                            :name   {:type '(non-null String)}
                            :number {:type '(non-null Int)}
-                           :link   {:type '(non-null :Href)}}}
-        :Href    {:fields {:href {:type '(non-null String)}}}}
+                           :link   {:type '(non-null :Action)}}}
+        :Action  {:fields {:href {:type '(non-null String)}}}}
        :queries
        {:pokemon {:type    '(non-null :Pokemon)
                   :args    {}
