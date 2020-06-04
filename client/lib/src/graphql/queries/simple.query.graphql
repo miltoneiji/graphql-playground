@@ -3,5 +3,8 @@ query simple {
     id
     name
     number
+    link {
+      href
+    }
   }
 }

@@ -8,6 +8,20 @@ import 'package:gql/ast.dart';
 part 'schema.graphql.g.dart';
 
 @JsonSerializable(explicitToJson: true)
+class Simple$Query$Pokemon$Href with EquatableMixin {
+  Simple$Query$Pokemon$Href();
+
+  factory Simple$Query$Pokemon$Href.fromJson(Map<String, dynamic> json) =>
+      _$Simple$Query$Pokemon$HrefFromJson(json);
+
+  String href;
+
+  @override
+  List<Object> get props => [href];
+  Map<String, dynamic> toJson() => _$Simple$Query$Pokemon$HrefToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
 class Simple$Query$Pokemon with EquatableMixin {
   Simple$Query$Pokemon();
 
@@ -20,8 +34,10 @@ class Simple$Query$Pokemon with EquatableMixin {
 
   int number;
 
+  Simple$Query$Pokemon$Href link;
+
   @override
-  List<Object> get props => [id, name, number];
+  List<Object> get props => [id, name, number, link];
   Map<String, dynamic> toJson() => _$Simple$Query$PokemonToJson(this);
 }
 
@@ -73,7 +89,20 @@ class SimpleQuery extends GraphQLQuery<Simple$Query, JsonSerializable> {
                     alias: null,
                     arguments: [],
                     directives: [],
-                    selectionSet: null)
+                    selectionSet: null),
+                FieldNode(
+                    name: NameNode(value: 'link'),
+                    alias: null,
+                    arguments: [],
+                    directives: [],
+                    selectionSet: SelectionSetNode(selections: [
+                      FieldNode(
+                          name: NameNode(value: 'href'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null)
+                    ]))
               ]))
         ]))
   ]);

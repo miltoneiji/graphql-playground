@@ -24,7 +24,7 @@ class _AppState extends State<App> {
     final pokemon = await _queryPokemon();
     setState(() {
       response =
-          'id: ${pokemon.id}\nname: ${pokemon.name}\nnumber: ${pokemon.number}';
+          'id: ${pokemon.id}\nname: ${pokemon.name}\nnumber: ${pokemon.number}\nhref: ${pokemon.link.href}';
     });
   }
 

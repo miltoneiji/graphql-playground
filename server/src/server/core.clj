@@ -9,13 +9,16 @@
   [context arguments value]
   {:id     "1"
    :name   "Charmander"
-   :number 1})
+   :number 1
+   :link   {:href "example.com"}})
 
 (def graphql-schema
   (-> {:objects
        {:Pokemon {:fields {:id     {:type '(non-null String)}
                            :name   {:type '(non-null String)}
-                           :number {:type '(non-null Int)}}}}
+                           :number {:type '(non-null Int)}
+                           :link   {:type '(non-null :Href)}}}
+        :Href    {:fields {:href {:type '(non-null String)}}}}
        :queries
        {:pokemon {:type    '(non-null :Pokemon)
                   :args    {}

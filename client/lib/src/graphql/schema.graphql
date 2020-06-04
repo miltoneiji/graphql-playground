@@ -2,6 +2,11 @@ type Pokemon {
   id: String!
   number: Int!
   name: String!
+  link: Href!
+}
+
+type Href {
+  href: String!
 }
 
 type Query {
